@@ -1,0 +1,51 @@
+/* ==========================================
+   STARFIELD BACKGROUND
+   ========================================== */
+
+.stars {
+    position: fixed;       /* Fixed to viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;  /* Can't click on stars */
+    z-index: 0;           /* Behind everything */
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;   /* Make it circular */
+    animation: twinkle 3s infinite;
+}
+
+/* Star twinkling effect */
+@keyframes twinkle {
+    0%, 100% { 
+        opacity: 0.3; 
+    }
+    50% { 
+        opacity: 1; 
+    }
+}
+
+
+/* ==========================================
+   HERO GLOW ANIMATION
+   ========================================== */
+
+.hero h1 {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Pulsing glow effect on title */
+@keyframes glow {
+    from { 
+        filter: drop-shadow(0 0 10px var(--accent-glow)); 
+    }
+    to { 
+        filter: drop-shadow(0 0 20px var(--accent-glow)); 
+    }
+}
